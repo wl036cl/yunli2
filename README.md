@@ -1,6 +1,6 @@
 # yunli
 
-> A Vue.js project
+> webpack+vue2
 
 ## Build Setup
 
