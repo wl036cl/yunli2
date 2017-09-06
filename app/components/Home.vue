@@ -134,8 +134,6 @@
                 }
             },
             goBack(){
-                //var hash=this.homePage.backUrl.split('/');
-                //this.homePage.backUrl =hash.length>0?hash[0]:'';
                 history.go(-1);
             },
             toggleNav(){
@@ -153,11 +151,8 @@
                         Router.replace({name: type});
                 }
                 this.homePage.navOpen=false;
-                //this.toggleNav();
             },
             routerContent(opt){
-                //if (opt.hasOwnProperty('from'))
-                //    this.homePage.backUrl = opt.from;
                 if (opt.hasOwnProperty('to'))
                     Router.push({name: opt.to, params: opt['params']});
             }
