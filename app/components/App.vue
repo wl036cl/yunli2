@@ -1,9 +1,8 @@
 <template>
-    <section class="app">
+    <section class="app-bg">
         <img :src="imgUrl">
     <h1>{{msg}}</h1></section>
 </template>
-
 <script>
     import Common from '../js/common';
     export default{
@@ -17,7 +16,7 @@
 </script>
 
 <style lang="less">
-    .app {
+    .app-bg {
         text-align: center;
         padding-top: 30%;
     }

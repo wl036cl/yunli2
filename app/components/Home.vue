@@ -1,8 +1,8 @@
 <template>
-    <section v-if="page==='app'">
+    <section v-if="page==='app'" :style="{height:height}">
         <app></app>
     </section>
-    <section v-else-if="page==='login'" class="login-bg" :style="{height:loginPage.height}">
+    <section v-else-if="page==='login'" class="login-bg" :style="{height:height}">
         <mu-flexbox class="swiper-wrap" :class="{right:!loginPage.isShowLogin}" :gutter="0">
             <mu-flexbox-item >
                 <login @checkLogin="checkLogin"></login>
@@ -55,8 +55,8 @@
                 callback:null,
                 msg:'',
                 page: 'app',
+                height:window.screen.height+'px',
                 loginPage: {
-                    height:'auto',
                     isShowLogin: true
                 },
                 homePage: {
@@ -145,7 +145,7 @@
                 let $this=this;
                 switch (type){
                     case 'close':
-                        Common.signOut(function(){
+                        Common.signOut(this,function(){
                             $this.checkLogin();
                         });
                         break;
@@ -177,16 +177,9 @@
                 this.homePage.backUrl=(path.length>1||path[0].indexOf('edit')>0)?path:'';
                 //}
             },
-            'page'(to){
-                if(to=='login')
-                {
-                    this.loginPage.height=window.screen.height+'px';
-                }
-            }
         },
     }
 </script>
 <style lang="less" type="text/css">
-    @import "../css/login.less";
     @import "../css/home.less";
 </style>

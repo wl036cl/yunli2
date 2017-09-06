@@ -73,7 +73,9 @@
                         $this.user.head = Common.getUrl(res.uhead);
                         $this.user.name = res.uname;
                     } else
-                        Common.signOut();
+                    {
+                        Common.setCache([['yunli_uid'],['yunli_token']]);
+                    }
                 });
         }
     }

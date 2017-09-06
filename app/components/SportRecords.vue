@@ -8,24 +8,24 @@
             <mu-tab value="tab1" icon="format_list_numbered" title="列表"/>
             <mu-tab value="tab2" icon="trending_up" title="线图"/>
         </mu-tabs>
-        <mu-flexbox class="swiper-wrap" :class="{right:activeTab==='tab2'}" :gutter="0">
-                <mu-flexbox-item >
-                    <timeLine :list="list" :model="model" :color="color" @delete="deleteRecord"></timeLine>
-                </mu-flexbox-item>
-                <mu-flexbox-item >
-                    <div class="chart-menu">
+        <mu-flexbox id="swiperWrap" class="swiper-wrap" :class="{right:activeTab==='tab2'}" :gutter="0">
+            <mu-flexbox-item>
+                <timeLine :list="list" :model="model" :color="color" @delete="deleteRecord"></timeLine>
+            </mu-flexbox-item>
+            <mu-flexbox-item >
+                <div class="chart-menu">
                     <mu-radio name="chartCate" v-model="chartCate" label="近10次" nativeValue="0"/>
                     <mu-radio name="chartCate" v-model="chartCate" label="近10周" nativeValue="1"/>
                     <mu-radio name="chartCate" v-model="chartCate" label="近6个月" nativeValue="2"/>
-                    </div>
-                    <schart :canvasId="chart.canvasId"
+                </div>
+                <schart :canvasId="chart.canvasId"
                             :type="chart.type"
                             :width="chart.width"
                             :height="chart.height"
                             :data="chart.data"
-                            :options="chart.options"
-                    ></schart>
-                </mu-flexbox-item>
+                            :options="chart.options">
+                </schart>
+            </mu-flexbox-item>
         </mu-flexbox>
     </div>
         <p v-else class="sport-record">暂无数据</p>
@@ -66,7 +66,23 @@
         },
         components: {timeLine,Schart},
         methods:{
+            handleTabContent(el){
+                Common.addEvent(el,'transitionend',function(){
+                    let isRigh=el.className.indexOf('right')>-1;
+                    el.children[0].style.visibility=  isRigh?'hidden':'visible';
+                    el.children[1].style.visibility=  !isRigh?'hidden':'visible';
+                });
+            },
             handleTabChange (val) {
+                //监听tab切换，
+                let el=document.getElementById('swiperWrap');
+                if(!this.tabHandle) {
+                    this.handleTabContent(el);
+                    this.tabHandle=true;
+                }else{
+                    el.children[0].style.visibility= 'visible';
+                    el.children[1].style.visibility= 'visible';
+                }
                 this.activeTab = val;
                 if (val === 'tab2')
                     this.getChart(this.chartCate);
@@ -323,8 +339,11 @@
     .sport-record .chart-menu{
         text-align: right;
     }
+    .sport-record .chart-menu .mu-radio-icon{
+        margin-right: 2px;
+    }
     .sport-record .mu-radio{
-         margin-right: 2rem;
+         margin-right: 12px;
     }
     .sport-record .swiper-wrap{
         align-items: flex-start;

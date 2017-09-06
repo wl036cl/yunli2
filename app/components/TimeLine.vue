@@ -79,22 +79,22 @@
         font-size:13px;
     }
     .timeline .record-wrap .remark{
-        width: 85%;
+        width: 80%;
         font-size:13px;
     }
     .timeline .btn-delete{
         position: absolute;
-        right:2%;
+        right:0;
         top:47%;
         transform:translateY(-50%);
     }
     @keyframes lineBack {
         from { transform:translateY(0);}
-        to { transform:translateY(15px);}
+        to { transform:translateY(13px);}
     }
     @-webkit-keyframes lineBack /*Safari and Chrome*/
     {
         from { transform:translateY(0);}
-        to { transform:translateY(15px);}
+        to { transform:translateY(13px);}
     }
 </style>

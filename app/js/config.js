@@ -15,6 +15,7 @@ const Config = {
     videoUrl:'http://yl.ll36.cn',
     urlsEnum: {
         loginIn:Prefix+'/user/loginin'+Suffix,
+        loginOut:Prefix+'/user/loginOut'+Suffix,
         register:Prefix+'/user/register'+Suffix,
         getUser:Prefix+'/user/getUser'+Suffix,
         //getWords:Prefix+'/word/getWords'+Suffix,

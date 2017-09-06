@@ -179,9 +179,23 @@ const Common = {
             console.log(e);
         });
     },
-    signOut: function (callback) {
-        this.setCache([['yunli_uid'],['yunli_token']]);
-        callback && callback();
+    signOut: function (vue,callback) {
+        let $this=this;
+        vue.$http.jsonp(Config.apiUrl + Config.urlsEnum.loginOut,
+            {
+                params: {
+                    uid: this.getCache('yunli_uid'),
+                    token: this.getCache('yunli_token')
+                }
+            }).then(function (res) {
+            res = res.data;
+            if(res.result==1){
+                $this.setCache([['yunli_uid'],['yunli_token']]);
+            }
+            callback && callback(res);
+        }, function (e) {
+            console.log(e);
+        });
     },
     getUser:function(vue,oauthUId,oauthToken,callback){
         vue.$http.jsonp(Config.apiUrl + Config.urlsEnum.getUser,
