@@ -89,12 +89,12 @@
         transform:translateY(-50%);
     }
     @keyframes lineBack {
-        from {top:0;}
-        to {top:15px;}
+        from { transform:translateY(0);}
+        to { transform:translateY(15px);}
     }
     @-webkit-keyframes lineBack /*Safari and Chrome*/
     {
-        from {top:0;}
-        to {top:15px;}
+        from { transform:translateY(0);}
+        to { transform:translateY(15px);}
     }
 </style>
