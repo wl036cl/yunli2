@@ -171,11 +171,8 @@
         },
         watch: {
             '$route' (to) {
-                //if (to.name === 'sport') {
-                    //this.homePage.backUrl=to.path;
                 var path=to.path.replace(/^\//,'').split('/');
                 this.homePage.backUrl=(path.length>1||path[0].indexOf('edit')>0)?path:'';
-                //}
             },
         },
     }
