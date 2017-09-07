@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fcb752d-e51c-4d4f-94b0-11d1146e6b8c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/anchor.ico" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Home.vue" afterPath="$PROJECT_DIR$/app/components/Home.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/SportEdit.vue" afterPath="$PROJECT_DIR$/app/components/SportEdit.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/SportRecords.vue" afterPath="$PROJECT_DIR$/app/components/SportRecords.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Sports.vue" afterPath="$PROJECT_DIR$/app/components/Sports.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/TextEdit.vue" afterPath="$PROJECT_DIR$/app/components/TextEdit.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/home.less" afterPath="$PROJECT_DIR$/app/css/home.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/run.svg" afterPath="$PROJECT_DIR$/app/images/run.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/config.js" afterPath="$PROJECT_DIR$/app/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/routers.js" afterPath="$PROJECT_DIR$/app/js/routers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="yunli.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,21 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/routers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.684466">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sports.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sports.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/components/Sports.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="99" column="73" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
+            <state vertical-scroll-proportion="2.606383">
+              <caret line="98" column="50" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -117,8 +107,8 @@
       <file leaf-file-name="TimeLine.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/TimeLine.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.625">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state vertical-scroll-proportion="-1.25">
+              <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -189,7 +179,6 @@
         <option value="$PROJECT_DIR$/app/images/run.svg" />
         <option value="$PROJECT_DIR$/app/js/main.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app/components/TimeLine.vue" />
         <option value="$PROJECT_DIR$/app/components/App.vue" />
         <option value="$PROJECT_DIR$/app/css/main.less" />
         <option value="$PROJECT_DIR$/app/components/Nav.vue" />
@@ -197,12 +186,13 @@
         <option value="$PROJECT_DIR$/app/css/home.less" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/components/SportRecords.vue" />
-        <option value="$PROJECT_DIR$/app/components/Sports.vue" />
         <option value="$PROJECT_DIR$/app/js/config.js" />
         <option value="$PROJECT_DIR$/app/components/TextEdit.vue" />
         <option value="$PROJECT_DIR$/app/components/SportEdit.vue" />
         <option value="$PROJECT_DIR$/app/components/Home.vue" />
         <option value="$PROJECT_DIR$/app/js/routers.js" />
+        <option value="$PROJECT_DIR$/app/components/TimeLine.vue" />
+        <option value="$PROJECT_DIR$/app/components/Sports.vue" />
       </list>
     </option>
   </component>
@@ -259,6 +249,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="yunli2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yunli" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yunli2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yunli" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yunli2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -381,15 +403,22 @@
       <option name="project" value="LOCAL" />
       <updated>1504687016583</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化">
+      <created>1504777537876</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504777537876</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1382" height="784" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23352855" sideWeight="0.4944" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23352855" sideWeight="0.4944" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2527233" sideWeight="0.5056" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -399,7 +428,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -425,7 +453,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="optimize" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimize" />
+    <MESSAGE value="优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -763,14 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Sports.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="99" column="73" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/TextEdit.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9444444">
@@ -795,18 +816,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/TimeLine.vue">
+    <entry file="file://$PROJECT_DIR$/app/js/routers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/routers.js">
+    <entry file="file://$PROJECT_DIR$/app/components/TimeLine.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.684466">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Sports.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.606383">
+          <caret line="98" column="50" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
           <folding />
         </state>
       </provider>
