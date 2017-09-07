@@ -6,7 +6,7 @@
     <div v-else-if="list.length">
         <mu-tabs :value="activeTab" @change="handleTabChange">
             <mu-tab value="tab1" icon="format_list_numbered" title="列表"/>
-            <mu-tab value="tab2" icon="trending_up" title="线图"/>
+            <mu-tab value="tab2" icon="equalizer" title="线图"/>
         </mu-tabs>
         <mu-flexbox id="swiperWrap" class="swiper-wrap" :class="{right:activeTab==='tab2'}" :gutter="0">
             <mu-flexbox-item>

@@ -55,7 +55,7 @@
                 callback:null,
                 msg:'',
                 page: 'app',
-                height:window.screen.height+'px',
+                height:document.body.parentNode.clientHeight+'px',
                 loginPage: {
                     isShowLogin: true
                 },

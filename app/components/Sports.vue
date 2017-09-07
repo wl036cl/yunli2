@@ -97,7 +97,7 @@
                         data[i]['bgColor'] = {"background-color": this.bgColors[i % this.bgColors.length]};
 
                         data[i]['transform'] = {};
-
+                        data[i].status = data[i].status == 0 ? 3 : data[i].status;//放弃-》失败
                         switch (Number(data[i].status)) {
                             case -1:
                                 data[i].status = 'tip-deleted';

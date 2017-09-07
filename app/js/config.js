@@ -9,7 +9,7 @@ const Config = {
         debug:true,
         devtools: true
     },
-    apiUrl: 'http://yl.ll36.cn',
+    apiUrl:document.location.hostname!="localhost"? document.location.origin:'http://yl.ll36.cn',
     //apiUrl:'http://localhost:22723',
     imgUrl:'http://yl.ll36.cn',
     videoUrl:'http://yl.ll36.cn',

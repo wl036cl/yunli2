@@ -1,6 +1,6 @@
 <template>
     <div class="sport-edit">
-        <textEdit :list="textlist" @handleInput="handleError"></textEdit>
+        <textEdit :list="textlist" @handleInput="handleError" @handleSelect="handleSelect"></textEdit>
         <p class="errmsg" :class="{red:!msg.isRight,green:msg.isRight}">
             {{msg.content}}
         </p>
@@ -17,10 +17,15 @@
         data () {
             return {
                 textlist:[
-                    {  maxlength: 10, placeholder: '项目名称', type: 'text', value: '',errmsg:'',list:null },
-                    {  maxlength: 6, placeholder: '项目目标', type: 'tel', value: '', errmsg: '', list: null },
-                    {  maxlength: 4, placeholder: '计量单位', type: 'text', value: '', errmsg: '', list: null },
-                    {  maxlength: 100, placeholder: '运动宣言', type: 'multiline',rows:2,rowsMax:5, value: '', errmsg: '', list: null },
+                    {  maxlength: 10, placeholder: '项目名称', type: 'text', value: '',errmsg:'' },
+                    {  maxlength: 6, placeholder: '项目目标', type: 'tel', value: '', errmsg: '' },
+                    {  maxlength: 4, placeholder: '计量单位', type: 'text', value: '', errmsg: '' },
+                    {  maxlength: 100, placeholder: '运动宣言', type: 'multiline',rows:2,rowsMax:5, value: '', errmsg: '' },
+                    {  placeholder: '状态', name:'status',type: 'select',value:1,icon:'show_chart',disabled:true,
+                        list: [{value:1,text:'启动',icon:'show_chart'},
+                            {value:2,text:'成功',icon:'check'},
+                            {value:3,text:'失败',icon:'close'}
+                        ] },
                     {  placeholder: '是否公开', type: 'checkbox', uncheckIcon:"visibility_off",checkedIcon:"visibility", value:true}
                 ],
                 msg: {
@@ -56,12 +61,18 @@
                         break;
                 }
             },
+            handleSelect(value){
+                this.textlist[4].icon=this.textlist[4].list[Number(value)-1].icon;
+            },
             setData(data){
                 this.textlist[0].value = data.title;
                 this.textlist[1].value = data.target;
                 this.textlist[2].value = data.unit;
                 this.textlist[3].value = data.remark;
-                this.textlist[4].value = (data.isPrivate == 1 ? false:true);
+                this.textlist[4].value = data.status;
+                this.textlist[4].disabled=false;
+                this.handleSelect(data.status);
+                this.textlist[5].value = (data.isPrivate == 1 ? false : true);
 
                 this.btntext = "更新";
             },
@@ -103,7 +114,8 @@
                                     target: this.textlist[1].value,
                                     unit: this.textlist[2].value,
                                     remark: this.textlist[3].value,
-                                    isprivate: !this.textlist[4].value
+                                    status: this.textlist[4].value,
+                                    isprivate: !this.textlist[5].value
                                 }
                             }).then(function (res) {
                         res = res.data;
