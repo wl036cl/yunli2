@@ -52,8 +52,6 @@
                     category:-1,//0:近10次；1:近8周；2：近6个月
                     canvasId: 'myCanvas',
                     type: 'line',
-                    //width:0,
-                    //height:0,
                     width: Math.round(document.body.clientWidth *.96*Math.round(window.devicePixelRatio)),
                     height: Math.round(document.body.clientWidth *.96*Math.round(window.devicePixelRatio)/1.25),
                     data: [],
