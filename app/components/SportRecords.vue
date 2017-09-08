@@ -15,11 +15,12 @@
             <mu-flexbox-item >
                 <div class="chart-menu">
                     <mu-radio name="chartCate" v-model="chartCate" label="近10次" nativeValue="0"/>
-                    <mu-radio name="chartCate" v-model="chartCate" label="近10周" nativeValue="1"/>
+                    <mu-radio name="chartCate" v-model="chartCate" label="近8周" nativeValue="1"/>
                     <mu-radio name="chartCate" v-model="chartCate" label="近6个月" nativeValue="2"/>
                 </div>
-                <schart :canvasId="chart.canvasId"
+                <schart class="chart-canvas" :canvasId="chart.canvasId"
                             :type="chart.type"
+                        :scale="chart.scale"
                             :width="chart.width"
                             :height="chart.height"
                             :data="chart.data"
@@ -48,11 +49,13 @@
                 activeTab:"tab1",
                 chartCate:"0",
                 chart:{
-                    category:-1,//0:近10次；1:近10周；2：近6个月
+                    category:-1,//0:近10次；1:近8周；2：近6个月
                     canvasId: 'myCanvas',
                     type: 'line',
-                    width: 0,
-                    height: 0,
+                    //width:0,
+                    //height:0,
+                    width: Math.round(document.body.clientWidth *.96*Math.round(window.devicePixelRatio)),
+                    height: Math.round(document.body.clientWidth *.96*Math.round(window.devicePixelRatio)/1.25),
                     data: [],
                     options: {
                         title: '近7次',
@@ -273,12 +276,12 @@
                         this.chart.options.title="近10次";
                         this.setChart(this.list.length > 10 ? this.list.slice(0, 10) : this.list);
                     }
-                    else if (type === 1)//近10周
+                    else if (type === 1)//近8周
                     {
                         this.chart.type='bar';
-                        this.chart.options.title="近10周";
+                        this.chart.options.title="近8周";
                         //if (this.list.length > 10) {
-                            let firstSunday=new Date(new Date(Common.dateFtt("yyyy-M-d",new Date(this.list[0].recordTimeStr))).getTime()-(9*7+new Date(this.list[0].recordTimeStr).getDay())*24*3600*1000);
+                            let firstSunday=new Date(new Date(Common.dateFtt("yyyy-M-d",new Date(this.list[0].recordTimeStr))).getTime()-(7*7+new Date(this.list[0].recordTimeStr).getDay())*24*3600*1000);
                             this.setChart(this.dateLimit(this.list,firstSunday),firstSunday);
                         //}
                     }
@@ -329,7 +332,7 @@
         text-align: center;
         padding-top: 3rem;
     }
-    .sport-record .mu-tabs,.sport-record .timeline,.sport-record .chart-menu{
+    .sport-record .mu-tabs,.sport-record .timeline,.sport-record .chart-menu,.sport-record .chart-canvas {
         width: 96%;margin: 1rem auto;
     }
     .sport-record .mu-tabs{
@@ -355,9 +358,10 @@
         display: inline-block;
         vertical-align: middle;margin-top:0;
     }
-    .sport-record #myCanvas{
+    .sport-record .chart-canvas canvas{
         display: block;
         margin: 0 auto;
         border-radius: .5rem;
+        width: 100%;
     }
 </style>
