@@ -11,7 +11,7 @@ const Config = {
     },
     apiUrl:document.location.hostname!="localhost"? document.location.origin:'http://yl.ll36.cn',
     //apiUrl:'http://localhost:22723',
-    imgUrl:'http://yl.ll36.cn',
+    imgUrl:'http://ovxw8fyk7.bkt.clouddn.com',
     videoUrl:'http://yl.ll36.cn',
     urlsEnum: {
         loginIn:Prefix+'/user/loginin'+Suffix,

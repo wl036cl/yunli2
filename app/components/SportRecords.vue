@@ -126,7 +126,7 @@
             getRecords() {
                 if (this.userId && this.token && this.sid) {
                     let list = Common.getCache("yunli_records_" + this.sid), model = Common.getCache("yunli_sport_" + this.sid);
-                    if (list && model) {
+                    if (list&&list.length && model) {
                         this.model = model;
                         this.list = list;
                         return;

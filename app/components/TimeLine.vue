@@ -3,7 +3,7 @@
             <transition-group class="timeline-ul" name="list" tag="ul">
             <li class="timeline-li" v-for="(item,index) in list" :key="item">
                 <div class="line-wrap">
-                    <img class="run-img" :style="styleImg" src="./../images/run.svg" />
+                    <img class="run-img" :style="imgStyle" :src="imgUrl" />
                 </div>
                 <div class="record-wrap">
                     <p class="time" :style="{color:color}">{{item.recordTimeStr}}</p>
@@ -16,10 +16,12 @@
     </div>
 </template>
 <script>
+    import Common from './../js/common';
     export default{
         data(){
             return{
-                styleImg:{filter:"drop-shadow(-2rem 0 "+this.color+")"},
+                imgUrl:Common.getUrl('/images/run.svg'),
+                imgStyle:{filter:"drop-shadow(-2rem 0 "+this.color+")"},
             }
         },
         props: ['list','model','color'],

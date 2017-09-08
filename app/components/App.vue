@@ -8,7 +8,7 @@
     export default{
         data(){
             return{
-                imgUrl:Common.getUrl('/image/anchor.png'),
+                imgUrl:Common.getUrl('/images/anchor.png'),
                 msg:'Welcome to Your Data'
             }
         }

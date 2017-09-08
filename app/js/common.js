@@ -155,9 +155,9 @@ const Common = {
     getUrl: function (url) {
         if (!url)
             return '';
-        if (url.indexOf('http') == 0)
-            return url;
-        let fileUrl=/[mp4|mov]/.test(url);
+        //if (url.indexOf('http') == 0)
+        //    return url;
+        let fileUrl=/[mp4|mov]$/.test(url);
 
         if (url.indexOf('/') == 0)
             return (fileUrl?Config.videoUrl:Config.imgUrl) + url;

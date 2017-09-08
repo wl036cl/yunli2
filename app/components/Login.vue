@@ -67,7 +67,7 @@
                             $this.textlist[2].value='';
                             $this.$emit('checkLogin');
                             //window.location.reload();
-                        }, 1000);
+                        }, 500);
                     }
                     else {
                         $this.msg.isRight = false;

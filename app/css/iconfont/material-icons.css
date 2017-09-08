@@ -4,10 +4,11 @@
   font-weight: 400;
   src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
   src: local('Material Icons'),
-       local('MaterialIcons-Regular'),
-       url(MaterialIcons-Regular.woff2) format('woff2'),
-       url(MaterialIcons-Regular.woff) format('woff'),
-       url(MaterialIcons-Regular.ttf) format('truetype');
+  local('MaterialIcons-Regular'),
+  url(MaterialIcons-Regular.woff2) format('woff2'),
+  url(MaterialIcons-Regular.woff) format('woff'),/* chrome, firefox */
+  url(MaterialIcons-Regular.ttf) format('truetype'),/* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url(MaterialIcons-Regular.svg) format('svg'); /* iOS 4.1- */
 }
 
 .material-icons {

@@ -68,8 +68,8 @@
             getSports(){
                 if (this.userId && this.token) {
                     let data = Common.getCache("yunli_sports_" + this.userId);
-                    if (data && data.length && data.indexOf('[') == 0) {
-                        this.setData(eval(data));
+                    if (data && data.length) {
+                        this.setData(data);
                         return;
                     }
                     let $this = this;
