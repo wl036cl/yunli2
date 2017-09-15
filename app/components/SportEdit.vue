@@ -124,6 +124,7 @@
                             this.$emit('alert', {
                                 type: 'toast', msg: res.msg, callback: function (that) {
                                     Common.setCache("yunli_sports_" + $this.userId);
+                                    Common.setCache("yunli_sport_" + $this.Id);
                                     that.homePage.backUrl = '';
                                     history.go(-1);
                                 }

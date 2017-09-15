@@ -95,7 +95,6 @@
                 if (data && data.length > 0) {
                     for (let i = 0; i < data.length; i++) {
                         data[i]['bgColor'] = {"background-color": this.bgColors[i % this.bgColors.length]};
-
                         data[i]['transform'] = {};
                         switch (Number(data[i].status)) {
                             case -1:

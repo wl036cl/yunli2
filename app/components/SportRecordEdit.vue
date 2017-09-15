@@ -100,8 +100,8 @@
                             localStorage.removeItem("yunli_records_" + this.sid);
                             localStorage.removeItem("yunli_sport_" + this.sid);
                             localStorage.removeItem("yunli_sports_" + this.userId);
-                            this.$parent.list[0]['recordNum']+=1;
-
+                            this.$parent.list[0]['recordNum']+=1;//修改数量
+                            this.$parent.list[0]['lastTimeStr']=Common.dateFtt('yyyy-MM-dd',new Date());//修改更新时间
                             //this.$parent.allList[this.sindex]['recordNum']+=1;
                             this.$emit('alert', {type:'toast',msg:res.msg,callback: function () {
                                 history.go(-1);

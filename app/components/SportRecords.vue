@@ -41,7 +41,7 @@
     export default{
         data(){
             return{
-                add:true,
+                add:false,
                 id:0,
                 model:null,
                 color:'',
@@ -147,7 +147,6 @@
                             Common.setCache([["yunli_sport_" + this.sid, JSON.stringify(this.model), 10], ["yunli_records_" + this.sid, JSON.stringify(this.list), 10]]);
                         }
                     });
-
                 } else
                     history.go(-1);
             },
@@ -315,6 +314,13 @@
             "chartCate"(to){
                 if(to!=this.chart.category){
                     this.getChart(to);
+                }
+            },
+            "model"(to){
+                if(!!to){
+                    if(to.hasOwnProperty("status")&&to['status']==1){
+                        this.add=true;
+                    }
                 }
             }
         }
