@@ -20,7 +20,6 @@
                 </div>
                 <schart class="chart-canvas" :canvasId="chart.canvasId"
                             :type="chart.type"
-                        :scale="chart.scale"
                             :width="chart.width"
                             :height="chart.height"
                             :data="chart.data"
