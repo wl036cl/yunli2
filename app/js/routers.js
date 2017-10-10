@@ -39,15 +39,13 @@ const router = new VueRouter({
                             {name: 'sportrecords', path: 'sportrecords/:sid/:sindex', component: SportRecords},
                             {name: 'sportrecordedit', path: 'sportrecordedit/:sid/:sindex', component: SportRecordEdit},
                         ]
-                    },
-                    //{path: '*', component: NotFound}
+                    }
                 ]
             },
             {name: 'Nav', path: 'Nav', component: Nav},
             {name: 'App', path: 'App', component: App},
             {name: 'Login', path: 'Login', component: Login},
-            {name: 'Register', path: 'Register', component: Register},
-            {name: 'test', path: '/test', component: test},
+            {name: 'Register', path: 'Register', component: Register},,
             {path: '*', component: NotFound}
         ],
         scrollBehavior: function (to, from, savedPosition) {
