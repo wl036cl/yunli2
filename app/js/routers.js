@@ -12,7 +12,6 @@ const Nav=resolve => require(['./../components/Nav.vue'], resolve);
 const Login=resolve => require(['./../components/Login.vue'], resolve);
 const Register=resolve => require(['./../components/Register.vue'], resolve);
 const NotFound=resolve => require(['./../components/404.vue'], resolve);
-const test=resolve => require(['./../components/test.vue'], resolve);
 
 const Sprots=resolve => require(['./../components/Sports.vue'], resolve);
 const SportEdit=resolve => require(['./../components/SportEdit.vue'], resolve);
