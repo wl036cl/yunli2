@@ -9,7 +9,7 @@
     export default{
         data(){
             return{
-            imgUrl:Common.getUrl('/images/anchor.png'),
+                imgUrl:Common.getUrl('/images/anchor.png'),
                 msg:'404！页面不存在！'
             }
         }

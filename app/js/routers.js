@@ -6,11 +6,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-const App=resolve => require(['./../components/App.vue'], resolve);
 const Home=resolve => require(['./../components/Home.vue'], resolve);
-const Nav=resolve => require(['./../components/Nav.vue'], resolve);
-const Login=resolve => require(['./../components/Login.vue'], resolve);
-const Register=resolve => require(['./../components/Register.vue'], resolve);
 const NotFound=resolve => require(['./../components/404.vue'], resolve);
 
 const Sprots=resolve => require(['./../components/Sports.vue'], resolve);
@@ -20,6 +16,8 @@ const SportRecordEdit=resolve => require(['./../components/SportRecordEdit.vue']
 const UserInfo=resolve => require(['./../components/UserInfo.vue'], resolve);
 const About=resolve => require(['./../components/About.vue'], resolve);
 const Setting=resolve => require(['./../components/Setting.vue'], resolve);
+
+const Gobang=resolve => require(['./../components/game/Gobang.vue'], resolve);
 
 const router = new VueRouter({
         mode: 'history',
@@ -41,10 +39,7 @@ const router = new VueRouter({
                     }
                 ]
             },
-            {name: 'Nav', path: 'Nav', component: Nav},
-            {name: 'App', path: 'App', component: App},
-            {name: 'Login', path: 'Login', component: Login},
-            {name: 'Register', path: 'Register', component: Register},,
+            {name: 'Gobang', path: '/Gobang', component: Gobang},
             {path: '*', component: NotFound}
         ],
         scrollBehavior: function (to, from, savedPosition) {
