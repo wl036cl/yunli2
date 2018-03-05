@@ -8,7 +8,7 @@ const Common = {
     setTime:null,
     body_width:0,
     reSize:function(){
-        var $this=this;
+        let $this=this;
         if (this.setTime) {
             clearTimeout(this.setTime);
             this.setTime = null;
@@ -19,7 +19,7 @@ const Common = {
             };
         this.setTime = setTimeout(function () {
             $this.setTime = null;
-            var body_width_change = document.body.clientWidth;
+            let body_width_change = document.body.clientWidth;
             body_width_change = body_width_change > 512 ? 512 : body_width_change;
             if ($this.body_width != body_width_change) {
                 $this.body_width = body_width_change;
@@ -29,18 +29,18 @@ const Common = {
     },
     //检测textEdit
     checkTextEdit:function(list) {
-        if (!list || typeof(list) != 'object' | !list.length) {
+        if (!list || typeof(list) != "object" | !list.length) {
             return false;
         }
         for (let i = 0, len = list.length; i < len; i++) {
-            if (list[i].hasOwnProperty('errmsg')&&list[i].errmsg.length)
+            if (list[i].hasOwnProperty("errmsg")&&list[i].errmsg.length)
                 return false;
         }
         return true;
     },
     //数组排序
     arrSort(arr,name,asc){
-        var list = arr.slice(0);
+        let list = arr.slice(0);
         for(let i= 0,len=list.length;i<len;i++){
             for(let j=0;j<len;j++){
                 let a=name?list[i][name]:list[i],b=name?list[j][name]:list[j];
@@ -55,29 +55,31 @@ const Common = {
     },
     //利用localStorage缓存(time:默认永久(单位-分钟))
     setCache:function(key,value,time) {
-        function _setCache(_key, _value, _time) {
-            var curTime =0;
-            if (_time && Number(_time))
-                curTime = new Date().getTime()+ _time * 1000 * 60;
-            if (_value)
-                localStorage.setItem(_key, JSON.stringify({data: _value, time: curTime}));
-            else
-                localStorage.removeItem(_key);
-        }
-
-        if (typeof(key) === 'object') {
-            for (let i = 0, len = key.length; i < len; i++) {
-                _setCache(key[i][0], key[i].length > 1 ? key[i][1] : null, key[i].length > 2 ? key[i][2] : null);
+        let _setCache = function (_key, _value, _time) {
+            let curTime = 0;
+            if (_time && Number(_time)) {
+                curTime = new Date().getTime() + _time * 1000 * 60;
             }
+            if (_value) {
+                localStorage.setItem(_key, JSON.stringify({data: _value, time: curTime}));
+            }
+            else {
+                localStorage.removeItem(_key);
+            }
+        };
+        if (typeof(key) === "object") {
+            key.map(function (item) {
+                item.length == 3 ? _setCache(item[0], item[1], item[2]) : _setCache(item[0]);
+            });
         } else {
             _setCache(key, value, time);
         }
     },
     getCache:function(key) {
-        var data = localStorage.getItem(key);
+        const data = localStorage.getItem(key);
         if (!data)
             return null;
-        var dataObj = JSON.parse(data);
+        const dataObj = JSON.parse(data);
         if (dataObj.hasOwnProperty('time') && dataObj.time != 0 && new Date().getTime() > dataObj.time) {
             this.setCache(key, null);
             return null;
@@ -89,7 +91,7 @@ const Common = {
     //绑定事件
     addEvent:function(el, e, f) {//绑定事件
         if (el) {
-            var eArray = e.split(' ');
+            const eArray = e.split(' ');
             function _addEvent(_el, _e, _f) {
                 if (_el.addEventListener)
                     _el.addEventListener(_e, _f);
@@ -98,9 +100,9 @@ const Common = {
                 else
                     _el['on' + _e] = _f;
             }
-            for (var i = 0, len = eArray.length; i < len; i++) {
+            for (let i = 0, len = eArray.length; i < len; i++) {
                 if (el.length) {
-                    for (var j = 0, _len = el.length; j < _len; j++) {
+                    for (let j = 0, _len = el.length; j < _len; j++) {
                         _addEvent(el[j], eArray[i], f);
                     }
                 }
@@ -111,7 +113,7 @@ const Common = {
     },
     //时间格式化
     dateFtt:function(fmt,date){
-        var o = {
+        const o = {
             "M+" : date.getMonth()+1,                 //月份
             "d+" : date.getDate(),                    //日
             "h+" : date.getHours(),                   //小时
@@ -122,15 +124,15 @@ const Common = {
         };
         if(/(y+)/.test(fmt))
             fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));
-        for(var k in o)
+        for(let k in o)
             if(new RegExp("("+ k +")").test(fmt))
                 fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
         return fmt;
     },
     // 浅拷贝
     simpleClone: function (p) {
-        var c = {};
-        for (var i in p) {
+        let c = {};
+        for (let i in p) {
             if (p.hasOwnProperty(i)) {
                 c[i] = p[i];
             }
@@ -139,8 +141,8 @@ const Common = {
     },
     // 深拷贝
     deepClone: function (p, c) {
-        var c = c || {};
-        for (var i in p) {
+        c = c || {};
+        for (let i in p) {
             if (typeof p[i] == 'object') {
                 c[i] = (p[i].constructor === Array ) ? [] : {};
                 deepClone(p[i], c[i]);
@@ -187,7 +189,7 @@ const Common = {
                     uid: this.getCache('yunli_uid'),
                     token: this.getCache('yunli_token')
                 }
-            }).then(function (res) {
+            }).then(res=>{
             res = res.data;
             if(res.result==1){
                 $this.setCache([['yunli_uid'],['yunli_token']]);
@@ -204,7 +206,7 @@ const Common = {
                     oauthUId: oauthUId,
                     oauthToken: oauthToken
                 }
-            }).then(function (res) {
+            }).then(res=> {
             res = res.data;
             callback && callback(res);
         }, function (e) {
