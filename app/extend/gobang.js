@@ -3,7 +3,9 @@
  */
 var GoBang = function (canvas, options) {
     this.canvas = document.getElementById(canvas);
-    this.scale = Math.round(this.canvas.width / this.canvas.offsetWidth);//缩放比例
+    this.canvasStarX=0;
+    this.canvasStarY=0;
+    this.scale = Math.round(window.devicePixelRatio);//缩放比例
     this.scale = this.scale < 1 ? 1 : this.scale;
 
     this.ctx = this.canvas.getContext('2d');
@@ -59,7 +61,14 @@ GoBang.prototype = {
 
             //偏移定位
             this.positionY = this.padding * 4;
+        }else {
+            //横屏修改canvas的大小
+            this.canvas.style.width = this.width /  this.scale+ 'px';
+            this.canvas.style.height = this.height /  this.scale + 'px';
         }
+
+        this.canvasStarX=this.canvas.offsetLeft;
+        this.canvasStarY=this.canvas.offsetTop;
 
         this.ctx.clearRect(0, 0, this.width, this.height);
         this.drawChessBoard();
@@ -115,8 +124,8 @@ GoBang.prototype = {
         }
     },
     handlerClick: function (offsetX, offsetY) {
-        var pixelX = offsetX * this.scale;
-        var pixelY = offsetY * this.scale;
+        var pixelX = (offsetX - this.canvasStarX) * this.scale;
+        var pixelY = (offsetY - this.canvasStarY) * this.scale;
 
         var x = (pixelX - this.padding) > 0 ? Math.round((pixelX - this.padding) / this.lineHeight) : -1;
         var y = (pixelY - this.padding - this.positionY) > 0 ? Math.round((pixelY - this.padding - this.positionY) / this.lineHeight) : -1;
@@ -194,7 +203,6 @@ GoBang.prototype = {
                 if (Math.abs(this.touch.x2 - this.touch.x1) < 10 && Math.abs(this.touch.y2 - this.touch.y1) < 10) {
                     this.handlerClick(this.touch.x2, this.touch.y2);
                 }
-                //console.log(this.touch);
             }
             this.isTouch = false;
             e.preventDefault();

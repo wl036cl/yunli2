@@ -4,10 +4,10 @@
     </section>
     <section v-else-if="page==='login'" class="login-bg" :style="{height:height}">
         <mu-flexbox class="swiper-wrap" :class="{right:!loginPage.isShowLogin}" :gutter="0">
-            <mu-flexbox-item >
+            <mu-flexbox-item>
                 <login @checkLogin="checkLogin"></login>
             </mu-flexbox-item>
-            <mu-flexbox-item >
+            <mu-flexbox-item>
                 <register @checkLogin="checkLogin"></register>
             </mu-flexbox-item>
         </mu-flexbox>
@@ -16,7 +16,7 @@
                             v-bind="{label:(loginPage.isShowLogin?'Sign up':'Sign in'),
             primary:!loginPage.isShowLogin,
             secondary:loginPage.isShowLogin}"
-                            @click="loginPage.isShowLogin=!loginPage.isShowLogin" />
+                            @click="loginPage.isShowLogin=!loginPage.isShowLogin"/>
         </p>
     </section>
     <section v-else class="home">
@@ -27,13 +27,14 @@
             <mu-flat-button slot="actions" primary @click="hideDialog(true)" label="确定"/>
         </mu-dialog>
         <mu-appbar :title="homePage.title" :zDepth="1">
-            <mu-icon-button :style="{visibility:this.homePage.backUrl.length?'visible':'hidden'}" icon="chevron_left" slot="left" @click="goBack" />
+            <mu-icon-button :style="{visibility:this.homePage.backUrl.length?'visible':'hidden'}" icon="chevron_left"
+                            slot="left" @click="goBack"/>
             <mu-icon-button icon="menu" slot="right" @click="homePage.navOpen=!homePage.navOpen"/>
         </mu-appbar>
         <leftnav :open="homePage.navOpen" :docked="false" @toggle="toggleNav" @routerNav="routerNav"></leftnav>
         <div id="content">
             <transition name="fade" mode="out-in">
-                <router-view @routerContent="routerContent" @alert="handleAlert" @goBack="goBack" ></router-view>
+                <router-view @routerContent="routerContent" @alert="handleAlert" @goBack="goBack"></router-view>
             </transition>
         </div>
         <mu-back-top/>
@@ -46,67 +47,66 @@
     import leftnav from './Nav.vue';
     import Common from './../js/common';
     import Router from './../js/routers';
+
     export default {
-        data () {
+        data() {
             return {
-                toast:false,
-                dialog:false,
-                isconfirm:false,
-                callback:null,
-                msg:'',
+                toast: false,
+                dialog: false,
+                isconfirm: false,
+                callback: null,
+                msg: '',
                 page: 'app',
-                height:document.body.parentNode.clientHeight+'px',
+                height: document.body.parentNode.clientHeight + 'px',
                 loginPage: {
                     isShowLogin: true
                 },
                 homePage: {
-                    title:'运力',
-                    backUrl:'',
+                    title: '运力',
+                    backUrl: '',
                     uid: 0,
                     token: '',
-                    navOpen:false,
+                    navOpen: false,
                 }
             }
         },
-        components: {app,login, register,leftnav},
+        components: {app, login, register, leftnav},
         methods: {
-            handleAlert(opt){
-                if(opt.callback)
-                    this.callback=opt.callback;
+            handleAlert(opt) {
+                if (opt.callback)
+                    this.callback = opt.callback;
                 else
-                    this.callback=null;
-                if(opt.type=='toast')
-                {
-                    this.showToast(opt.msg,opt.hasOwnProperty('time')?opt.time:1000);
+                    this.callback = null;
+                if (opt.type == 'toast') {
+                    this.showToast(opt.msg, opt.hasOwnProperty('time') ? opt.time : 1000);
                 }
-                else if(opt.type=='alert'||opt.type=='confirm'){
-                    this.showDialog(opt.msg,opt.type=='confirm');
+                else if (opt.type == 'alert' || opt.type == 'confirm') {
+                    this.showDialog(opt.msg, opt.type == 'confirm');
                 }
             },
-            showDialog(msg,isconfirm){
-                this.msg=msg;
+            showDialog(msg, isconfirm) {
+                this.msg = msg;
                 this.dialog = true;
-                this.isconfirm=isconfirm;
+                this.isconfirm = isconfirm;
             },
-            hideDialog (tf) {
+            hideDialog(tf) {
                 this.dialog = false;
-                if (tf && this.callback)
-                {
+                if (tf && this.callback) {
                     this.callback(this);
-                    this.callback=null;
+                    this.callback = null;
                 }
             },
-            showToast (msg,time) {
+            showToast(msg, time) {
                 this.msg = msg;
                 this.toast = true;
                 if (this.toastTimer)
                     clearTimeout(this.toastTimer);
-                let $this=this;
+                let $this = this;
                 this.toastTimer = setTimeout(function () {
                     $this.hideToast();
-                }, time||1000);
+                }, time || 1000);
             },
-            hideToast () {
+            hideToast() {
                 if (this.callback) {
                     this.callback(this);
                     this.callback = null;
@@ -115,12 +115,12 @@
                 if (this.toastTimer)
                     clearTimeout(this.toastTimer);
             },
-            checkLogin(){
-                this.homePage.uid =Common.getCache("yunli_uid");
-                this.homePage.token =Common.getCache("yunli_token");
+            checkLogin() {
+                this.homePage.uid = Common.getCache("yunli_uid");
+                this.homePage.token = Common.getCache("yunli_token");
                 if (this.homePage.uid && this.homePage.token) {
-                    var $this=this;
-                    Common.signIn(this, this.homePage.uid, this.homePage.token, 2, function (res) {
+                    let $this = this;
+                    Common.signIn(this, this.homePage.uid, this.homePage.token, 2, res => {
                         if (res.result == 1) {
                             $this.routerNav('sport');
                             $this.page = "home";
@@ -133,41 +133,44 @@
                     this.page = "login";
                 }
             },
-            goBack(){
+            goBack() {
                 history.go(-1);
             },
-            toggleNav(){
-                this.homePage.navOpen=!this.homePage.navOpen;
+            toggleNav() {
+                this.homePage.navOpen = !this.homePage.navOpen;
             },
-            routerNav(type){
-                let $this=this;
-                switch (type){
+            routerNav(type) {
+                let $this = this;
+                switch (type) {
                     case 'close':
-                        Common.signOut(this,function(){
+                        Common.signOut(this, function () {
                             $this.checkLogin();
                         });
+                        break;
+                    case 'gobang':
+                        Router.push({name:type});
                         break;
                     default:
                         Router.replace({name: type});
                 }
-                this.homePage.navOpen=false;
+                this.homePage.navOpen = false;
             },
-            routerContent(opt){
+            routerContent(opt) {
                 if (opt.hasOwnProperty('to'))
                     Router.push({name: opt.to, params: opt['params']});
             }
         },
         mounted: function () {
-            var $this=this;
-            setTimeout(function(){
+            var $this = this;
+            setTimeout(function () {
                 $this.checkLogin();
-            },1000);
+            }, 1000);
             Common.reSize();
         },
         watch: {
-            '$route' (to) {
-                var path=to.path.replace(/^\//,'').split('/');
-                this.homePage.backUrl=(path.length>1||path[0].indexOf('edit')>0)?path:'';
+            '$route'(to) {
+                var path = to.path.replace(/^\//, '').split('/');
+                this.homePage.backUrl = (path.length > 1 || path[0].indexOf('edit') > 0) ? path : '';
             },
         },
     }

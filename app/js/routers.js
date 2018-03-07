@@ -20,7 +20,7 @@ const Setting=resolve => require(['./../components/Setting.vue'], resolve);
 const Gobang=resolve => require(['./../components/game/Gobang.vue'], resolve);
 
 const router = new VueRouter({
-        mode: 'history',
+        mode: 'history',//hash(默认),history,abstract(基于nodejs)
         routes: [
             {path:'/index.html', component: Home},
             {
@@ -39,7 +39,7 @@ const router = new VueRouter({
                     }
                 ]
             },
-            {name: 'Gobang', path: '/Gobang', component: Gobang},
+            {name: 'gobang', path: '/Gobang', component: Gobang},
             {path: '*', component: NotFound}
         ],
         scrollBehavior: function (to, from, savedPosition) {

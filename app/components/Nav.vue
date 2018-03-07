@@ -26,6 +26,11 @@
             </mu-list>
             <mu-divider/>
             <mu-list @itemClick="router">
+                <mu-list-item value="gobang" title="休息一刻">
+                    <mu-icon slot="left" value="blur_off"/>
+                </mu-list-item>
+            </mu-list>
+            <mu-list @itemClick="router">
                 <mu-list-item value="close" title="注销">
                     <mu-icon slot="left" value="power_settings_new"/>
                 </mu-list-item>

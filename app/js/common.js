@@ -3,17 +3,18 @@
  * Created by ll36 on 2017/8/16.
  */
 import Config from './config';
+
 const Common = {
     //调整rem
-    setTime:null,
-    body_width:0,
-    reSize:function(){
-        let $this=this;
+    setTime: null,
+    body_width: 0,
+    reSize: function () {
+        let $this = this;
         if (this.setTime) {
             clearTimeout(this.setTime);
             this.setTime = null;
         }
-        if(this.body_width==0)
+        if (this.body_width == 0)
             window.onresize = function () {
                 $this.reSize();
             };
@@ -28,33 +29,33 @@ const Common = {
         }, 100);
     },
     //检测textEdit
-    checkTextEdit:function(list) {
+    checkTextEdit: function (list) {
         if (!list || typeof(list) != "object" | !list.length) {
             return false;
         }
         for (let i = 0, len = list.length; i < len; i++) {
-            if (list[i].hasOwnProperty("errmsg")&&list[i].errmsg.length)
+            if (list[i].hasOwnProperty("errmsg") && list[i].errmsg.length)
                 return false;
         }
         return true;
     },
     //数组排序
-    arrSort(arr,name,asc){
+    arrSort(arr, name, asc) {
         let list = arr.slice(0);
-        for(let i= 0,len=list.length;i<len;i++){
-            for(let j=0;j<len;j++){
-                let a=name?list[i][name]:list[i],b=name?list[j][name]:list[j];
-                if(a<b&&!asc){
-                    let temp=list[j];
-                    list[j]=list[i];
-                    list[i]=temp;
+        for (let i = 0, len = list.length; i < len; i++) {
+            for (let j = 0; j < len; j++) {
+                let a = name ? list[i][name] : list[i], b = name ? list[j][name] : list[j];
+                if (a < b && !asc) {
+                    let temp = list[j];
+                    list[j] = list[i];
+                    list[i] = temp;
                 }
             }
         }
         return list;
     },
     //利用localStorage缓存(time:默认永久(单位-分钟))
-    setCache:function(key,value,time) {
+    setCache: function (key, value, time) {
         let _setCache = function (_key, _value, _time) {
             let curTime = 0;
             if (_time && Number(_time)) {
@@ -68,14 +69,14 @@ const Common = {
             }
         };
         if (typeof(key) === "object") {
-            key.map(function (item) {
-                item.length == 3 ? _setCache(item[0], item[1], item[2]) : _setCache(item[0]);
+            key.map(item => {
+                _setCache(item[0], item.length > 1 ? item[1] : null, item.length > 2 ? item[2] : null);
             });
         } else {
             _setCache(key, value, time);
         }
     },
-    getCache:function(key) {
+    getCache: function (key) {
         const data = localStorage.getItem(key);
         if (!data)
             return null;
@@ -89,9 +90,10 @@ const Common = {
             return dataObj;
     },
     //绑定事件
-    addEvent:function(el, e, f) {//绑定事件
+    addEvent: function (el, e, f) {//绑定事件
         if (el) {
             const eArray = e.split(' ');
+
             function _addEvent(_el, _e, _f) {
                 if (_el.addEventListener)
                     _el.addEventListener(_e, _f);
@@ -100,6 +102,7 @@ const Common = {
                 else
                     _el['on' + _e] = _f;
             }
+
             for (let i = 0, len = eArray.length; i < len; i++) {
                 if (el.length) {
                     for (let j = 0, _len = el.length; j < _len; j++) {
@@ -112,21 +115,21 @@ const Common = {
         }
     },
     //时间格式化
-    dateFtt:function(fmt,date){
+    dateFtt: function (fmt, date) {
         const o = {
-            "M+" : date.getMonth()+1,                 //月份
-            "d+" : date.getDate(),                    //日
-            "h+" : date.getHours(),                   //小时
-            "m+" : date.getMinutes(),                 //分
-            "s+" : date.getSeconds(),                 //秒
-            "q+" : Math.floor((date.getMonth()+3)/3), //季度
-            "S"  : date.getMilliseconds()             //毫秒
+            "M+": date.getMonth() + 1,                 //月份
+            "d+": date.getDate(),                    //日
+            "h+": date.getHours(),                   //小时
+            "m+": date.getMinutes(),                 //分
+            "s+": date.getSeconds(),                 //秒
+            "q+": Math.floor((date.getMonth() + 3) / 3), //季度
+            "S": date.getMilliseconds()             //毫秒
         };
-        if(/(y+)/.test(fmt))
-            fmt=fmt.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));
-        for(let k in o)
-            if(new RegExp("("+ k +")").test(fmt))
-                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        if (/(y+)/.test(fmt))
+            fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (let k in o)
+            if (new RegExp("(" + k + ")").test(fmt))
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
     },
     // 浅拷贝
@@ -144,7 +147,7 @@ const Common = {
         c = c || {};
         for (let i in p) {
             if (typeof p[i] == 'object') {
-                c[i] = (p[i].constructor === Array ) ? [] : {};
+                c[i] = (p[i].constructor === Array) ? [] : {};
                 deepClone(p[i], c[i]);
             } else {
                 if (p.hasOwnProperty(i)) {
@@ -159,14 +162,14 @@ const Common = {
             return '';
         //if (url.indexOf('http') == 0)
         //    return url;
-        let fileUrl=/[mp4|mov]$/.test(url);
+        let fileUrl = /[mp4|mov]$/.test(url);
 
         if (url.indexOf('/') == 0)
-            return (fileUrl?Config.videoUrl:Config.imgUrl) + url;
+            return (fileUrl ? Config.videoUrl : Config.imgUrl) + url;
         else
-            return (fileUrl?Config.videoUrl:Config.imgUrl) + '/' + url;
+            return (fileUrl ? Config.videoUrl : Config.imgUrl) + '/' + url;
     },
-    signIn:function(vue,oauthUId, oauthToken, type,callback) {
+    signIn: function (vue, oauthUId, oauthToken, type, callback) {
         vue.$http.jsonp(Config.apiUrl + Config.urlsEnum.loginIn,
             {
                 params: {
@@ -174,39 +177,39 @@ const Common = {
                     oauthToken: oauthToken,
                     type: type
                 }
-            }).then(function (res) {
+            }).then(res => {
             res = res.data;
             callback && callback(res);
         }, function (e) {
             console.log(e);
         });
     },
-    signOut: function (vue,callback) {
-        let $this=this;
+    signOut: function (vue, callback) {
+        let $this = this;
         vue.$http.jsonp(Config.apiUrl + Config.urlsEnum.loginOut,
             {
                 params: {
                     uid: this.getCache('yunli_uid'),
                     token: this.getCache('yunli_token')
                 }
-            }).then(res=>{
+            }).then(res => {
             res = res.data;
-            if(res.result==1){
-                $this.setCache([['yunli_uid'],['yunli_token']]);
+            if (res.result == 1) {
+                $this.setCache([['yunli_uid'], ['yunli_token']]);
             }
             callback && callback(res);
         }, function (e) {
             console.log(e);
         });
     },
-    getUser:function(vue,oauthUId,oauthToken,callback){
+    getUser: function (vue, oauthUId, oauthToken, callback) {
         vue.$http.jsonp(Config.apiUrl + Config.urlsEnum.getUser,
             {
                 params: {
                     oauthUId: oauthUId,
                     oauthToken: oauthToken
                 }
-            }).then(res=> {
+            }).then(res => {
             res = res.data;
             callback && callback(res);
         }, function (e) {
