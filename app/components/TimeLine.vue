@@ -82,7 +82,8 @@
     }
     .timeline .record-wrap .remark{
         width: 80%;
-        font-size:13px;
+        font-size:12px;
+        color:#484848;
     }
     .timeline .btn-delete{
         position: absolute;
