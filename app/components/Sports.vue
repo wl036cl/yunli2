@@ -1,7 +1,7 @@
 <template>
     <div class="sports" ref="sportUl">
         <transition-group name="list" tag="ul" class="sport-ul" >
-        <li class="sport-li" v-for="(item,index) in list" @click="showRecord(index)" :key="item" :data-sid="item.sportId">
+        <li class="sport-li" v-for="(item,index) in list" @click="showRecord(index)" :key="item.sportId" :data-sid="item.sportId">
             <div class="li-content" :data-index="index" :style="[item.bgColor,item.transform]" >
                 <span class="tip" :class="item.status">{{item.statusTip}}</span>
                 <div class="content-wrap">
