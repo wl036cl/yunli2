@@ -42,9 +42,9 @@
 </template>
 <script>
     import app from './app.vue';
-    import login from './login.vue';
-    import register from './register.vue';
-    import leftnav from './Nav.vue';
+    import login from './SignIn.vue';
+    import register from './SignUp.vue';
+    import leftnav from './SideBar.vue';
     import Common from './../js/common';
     import Router from './../js/routers';
 
@@ -176,5 +176,5 @@
     }
 </script>
 <style lang="less" type="text/css">
-    @import "../css/home.less";
+    @import "../styles/home.less";
 </style>
