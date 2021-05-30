@@ -12,7 +12,7 @@ export default{
   data () {
     return {
       imgUrl: getUrl('/images/anchor.png'),
-      msg: 'Welcome to Your Data'
+      msg: '404'
     }
   }
 }

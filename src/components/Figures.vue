@@ -1,12 +1,12 @@
 <template>
-    <div class="figures">
-        <img :src="imgUrl">
-        <h1>{{msg}}</h1>
-    </div>
+  <div class="figures">
+    <img :src="imgUrl" />
+    <h1>{{msg}}</h1>
+  </div>
 </template>
 <script>
 import Common from '../js/common'
-export default{
+export default {
   data () {
     return {
       imgUrl: Common.getUrl('/images/anchor.png'),
@@ -16,8 +16,8 @@ export default{
 }
 </script>
 <style lang="less">
-    .about {
-        text-align: center;
-        padding-top: 30%;
-    }
+.figures {
+  text-align: center;
+  padding-top: 30%;
+}
 </style>

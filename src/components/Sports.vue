@@ -5,7 +5,7 @@
         class="sport-li"
         v-for="(item,index) in list"
         @click="showRecord(index)"
-        :key="item"
+        :key="item.sportId"
         :data-sid="item.sportId"
       >
         <div class="li-content" :data-index="index" :style="[item.bgColor,item.transform]">

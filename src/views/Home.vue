@@ -58,6 +58,7 @@ export default {
         isShowLogin: true
       },
       height: document.body.parentNode.clientHeight + 'px',
+      // height: '100vh',
       homePage: {
         title: '运力',
         backUrl: '',
@@ -162,7 +163,7 @@ export default {
       }
     }
   },
-  mounted: function () {
+  mounted () {
     var $this = this
     setTimeout(function () {
       $this.checkLogin()

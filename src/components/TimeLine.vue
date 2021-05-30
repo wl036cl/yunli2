@@ -1,7 +1,7 @@
 <template>
     <div class="timeline">
             <transition-group class="timeline-ul" name="list" tag="ul">
-            <li class="timeline-li" v-for="(item,index) in list" :key="item">
+            <li class="timeline-li" v-for="(item,index) in list" :key="item.recordId">
                 <div class="line-wrap">
                     <img class="run-img" :style="imgStyle" :src="imgUrl" />
                 </div>
@@ -16,24 +16,24 @@
     </div>
 </template>
 <script>
-    import Common from './../js/common';
-    export default{
-        data(){
-            return{
-                imgUrl:Common.getUrl('/images/run.svg'),
-                imgStyle:{filter:"drop-shadow(-2rem 0 "+this.color+")"},
-            }
-        },
-        props: ['list','model','color'],
-        methods:{
-            deleteItem(index,rid){
-                this.$emit('delete',index,rid);
-            }
-        },
-        mounted: function () {
-
-        }
+import Common from './../js/common'
+export default{
+  data () {
+    return {
+      imgUrl: Common.getUrl('/images/run.svg'),
+      imgStyle: {filter: 'drop-shadow(-2rem 0 ' + this.color + ')'}
     }
+  },
+  props: ['list', 'model', 'color'],
+  methods: {
+    deleteItem (index, rid) {
+      this.$emit('delete', index, rid)
+    }
+  },
+  mounted: function () {
+
+  }
+}
 </script>
 <style lang="less">
     .timeline .timeline-ul{

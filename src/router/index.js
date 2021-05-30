@@ -54,7 +54,7 @@ Vue.use(Router)
 // const Gobang = resolve => require(['./../components/game/Gobang.vue'], resolve);
 
 const router = new Router({
-  mode: 'history', // hash(默认),history,abstract(基于nodejs)
+  // mode: 'history', // hash(默认),history,abstract(基于nodejs) （使用history服务器上运行存在问题）
   routes: [
     {
       path: '/sign', component: Sign
@@ -88,6 +88,9 @@ const router = new Router({
   scrollBehavior: () => { // 回退后返回顶部
     return {y: 0}
   }
+})
+router.beforeEach((to, from, next) => {
+  next()
 })
 
 export default router // 将路由器导出

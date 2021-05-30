@@ -21,8 +21,5 @@ export default {
 .app-bg {
   text-align: center;
   padding-top: 30%;
-  h1 {
-    color: #fff;
-  }
 }
 </style>
