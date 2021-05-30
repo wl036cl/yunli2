@@ -11,7 +11,7 @@
                 <mu-list-item value="sport" title="运动项目">
                     <mu-icon slot="left" value="directions_run"/>
                 </mu-list-item>
-                <mu-list-item value="body" title="身体指数">
+                <mu-list-item value="figure" title="身体指数">
                     <mu-icon slot="left" value="accessibility"/>
                 </mu-list-item>
             </mu-list>
