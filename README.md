@@ -23,3 +23,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 更新日志
 2021年5月30日21:50:38
 采用 vue-cli 重构项目，业务代码使用之前的；
+kg下，近6周和近半年，图表显示平均值，其他显示总和；
+sChart 迁移到当前项目，不再引入依赖；
+TODO:.net 服务器，无法运行history模式下build的包；
