@@ -4,7 +4,7 @@
                 :height="height"></canvas>
 </template>
 <script>
-import goBang from './gobang'
+import GoBang from './gobang'
 export default{
   data () {
     return {
@@ -20,7 +20,7 @@ export default{
 
   },
   mounted: function () {
-    goBang('mygoBang', { mode: 'auto' })
+    GoBang('mygoBang', { mode: 'auto' })
   }
 }
 </script>

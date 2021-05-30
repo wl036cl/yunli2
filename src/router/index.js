@@ -13,7 +13,7 @@ import Sign from '@/views/Sign'
 import NotFound from '@/views/NotFound'
 import Home from '@/views/Home'
 
-import Gobang from '@/components/game/Gobang'
+import Gobang from '@/components/game/vue-gobang'
 import SportEdit from '@/components/SportEdit'
 import Sports from '@/components/Sports'
 import Figures from '@/components/Figures'
