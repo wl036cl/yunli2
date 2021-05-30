@@ -1,0 +1,82 @@
+//login&register切换
+.login-bg,.app-bg{
+  min-height:100%;
+  position: relative;
+  background: rgba(17, 17, 17, 0.8)  url('https://assets.ll36.cn/images/1-1306030RI8.jpg') no-repeat;
+  background-size: 100% auto;
+  padding-top:40%;
+  .login {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.swiper-wrap{
+  width: 200%;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  transform:translateX(0);
+}
+.swiper-wrap.right{
+  transform:translateX(-50%);
+}
+.link-wrap{
+  width: 80%;
+  margin: 10px auto 0;
+}
+.btn-link{
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  margin-left:75%;
+  .mu-flat-button-label{
+    padding:0;
+  }
+}
+.btn-link.right{
+  margin-left:0;
+}
+//alert
+.mu-toast{
+  text-align: center;
+}
+//appbar
+.mu-appbar{
+  position: fixed;
+  left: 0;
+  top:0;
+  right: 0;
+  z-index: 9;
+}
+.mu-appbar-title{
+  text-align: center;
+}
+//nav
+nav {
+.mu-paper{
+  background-color: rgba(46,57,73,.9);}
+  .mu-item-left,.mu-item{
+    color: #fff;
+  }
+}
+//content
+#content{
+  padding-top:4rem;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */
+{
+  opacity: 0
+}
+.list-enter-active, .list-leave-active {
+  transition: all .3s;
+}
+.list-enter
+{opacity: 0;
+  transform: translateX(-50%);
+}
+.list-leave-to
+   /* .list-leave-active for below version 2.1.8 */ {
+   opacity: 0;
+   transform: translateX(100%);
+ }
