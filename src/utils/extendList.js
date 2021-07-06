@@ -10,7 +10,7 @@ export const extentArray = (target, source, key) => {
   let data = []
 
   if (Array.isArray(target) && Array.isArray(source) && key) {
-    if (target.length && source.length) {//先修改
+    if (target.length && source.length) { // 先修改
       target.forEach((item) => {
         if (item.hasOwnProperty(key)) {
           let _item = source.find((i) => {
@@ -25,11 +25,10 @@ export const extentArray = (target, source, key) => {
         }
       })
     }
-    if (!data.length)//未修改
+    if (!data.length)// 未修改
     {
       data = source
-    }
-    else if (source.length) { //新增
+    } else if (source.length) { // 新增
       source.forEach((item) => {
         let index = data.findIndex((i) => {
           return i.hasOwnProperty(key) && i[key] === item[key]

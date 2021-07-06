@@ -6,7 +6,7 @@
 import {fetch} from '../utils/fetch'
 import * as api from './apiUrl'
 
-export const DELETE_SPORT_RECORD = BaseUrl.APIURL + '/sport/deleteRecord'//删除项目记录
+export const DELETE_SPORT_RECORD = BaseUrl.APIURL + '/sport/deleteRecord'// 删除项目记录
 
 export const getSportRecordsList = function (uid, token, sid, npage) {
   const data = {uid, token, sid, npage}
@@ -17,7 +17,7 @@ export const getSportRecordsList = function (uid, token, sid, npage) {
   })
 }
 
-export const editSportRecord = function (uid, token,num,time,remark,sid,rid) {
+export const editSportRecord = function (uid, token, num, time, remark, sid, rid) {
   const data = {uid, token, num, time, remark, sid, rid}
 
   return fetch({
@@ -27,8 +27,8 @@ export const editSportRecord = function (uid, token,num,time,remark,sid,rid) {
   })
 }
 
-export const deleteSportRecord = function (uid, token,rid) {
-  const data= {uid, token,rid}
+export const deleteSportRecord = function (uid, token, rid) {
+  const data = {uid, token, rid}
 
   return fetch({
     url: api.DELETE_SPORT_RECORD,

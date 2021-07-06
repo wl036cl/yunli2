@@ -15,7 +15,7 @@ const defaultHeaders = {
 }
 
 // 请求参数加工
-function mutate(url, {headers, body, query, ...options}) {
+function mutate (url, {headers, body, query, ...options}) {
   headers = {...defaultHeaders, ...headers}
   options.headers = headers
 
@@ -40,7 +40,7 @@ function mutate(url, {headers, body, query, ...options}) {
   return [url, options]
 }
 
-function checkStatus(response) {
+function checkStatus (response) {
   if (response.status >= 200 && response.status < 300) {
     return response
   } else {
@@ -50,7 +50,7 @@ function checkStatus(response) {
   }
 }
 
-function parseJSON(response) {
+function parseJSON (response) {
   return response.json()
 }
 
@@ -121,7 +121,7 @@ export const fetch = (options = {}) => {
         headers.token = defaultOption.data.token
         delete defaultOption.data.token
       }
-      (defaultOption.type === 'get' ? get(defaultOption.url, defaultOption.data, {headers}) : post(defaultOption.url, defaultOption.data, {headers})).then(res=>resolve(res)).catch(err=>reject(err))
+      (defaultOption.type === 'get' ? get(defaultOption.url, defaultOption.data, {headers}) : post(defaultOption.url, defaultOption.data, {headers})).then(res => resolve(res)).catch(err => reject(err))
     } else {
       reject(new Error('url不能为空'))
     }

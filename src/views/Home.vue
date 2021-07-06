@@ -76,10 +76,10 @@ export default {
       } else {
         this.callback = null
       }
-      if (opt.type == 'toast') {
+      if (opt.type === 'toast') {
         this.showToast(opt.msg, opt.hasOwnProperty('time') ? opt.time : 1000)
-      } else if (opt.type == 'alert' || opt.type == 'confirm') {
-        this.showDialog(opt.msg, opt.type == 'confirm')
+      } else if (opt.type === 'alert' || opt.type === 'confirm') {
+        this.showDialog(opt.msg, opt.type === 'confirm')
       }
     },
     showDialog (msg, isconfirm) {
@@ -121,7 +121,7 @@ export default {
       if (this.homePage.uid && this.homePage.token) {
         let $this = this
         Common.signIn(this, this.homePage.uid, this.homePage.token, 2, res => {
-          if (res.result == 1) {
+          if (Number(res.result) === 1) {
             $this.routerNav('sport')
             $this.page = 'home'
           } else {
