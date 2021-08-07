@@ -20,6 +20,7 @@ export default{
 
   },
   mounted: function () {
+    document.title = '五子棋'
     GoBang('mygoBang', { mode: 'auto' })
   }
 }

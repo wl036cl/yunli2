@@ -165,6 +165,7 @@ export default {
   },
   mounted () {
     var $this = this
+    document.title = '运力'
     setTimeout(function () {
       $this.checkLogin()
     }, 1000)

@@ -26,3 +26,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 kg下，近6周和近半年，图表显示平均值，其他显示总和；
 sChart 迁移到当前项目，不再引入依赖；
 TODO:.net 服务器，无法运行history模式下build的包；
+
+2021年8月7日14:16:37
+增加主页
+修复运动项目下无记录时一直loading的问题。

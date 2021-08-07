@@ -12,6 +12,7 @@ import Router from 'vue-router'
 import Sign from '@/views/Sign'
 import NotFound from '@/views/NotFound'
 import Home from '@/views/Home'
+import Index from '@/views/Index'
 
 import Gobang from '@/components/game/vue-gobang'
 import SportEdit from '@/components/SportEdit'
@@ -61,6 +62,9 @@ const router = new Router({
     },
     {
       path: '/404', component: NotFound
+    },
+    {
+      path: '/', component: Index
     },
     {
       path: '/',

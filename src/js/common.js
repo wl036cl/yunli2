@@ -87,7 +87,9 @@ const Common = {
       this.setCache(key, null)
       return null
     } else if (dataObj.hasOwnProperty('data')) {
-      return JSON.parse(dataObj.data)
+      return /^(\{|\[)/.test(dataObj.data)
+        ? JSON.parse(dataObj.data)
+        : dataObj.data
     } else {
       return dataObj
     }

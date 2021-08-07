@@ -174,6 +174,9 @@ export default {
                 ['yunli_sport_' + this.sid, JSON.stringify(this.model), 10],
                 ['yunli_records_' + this.sid, JSON.stringify(this.list), 10]
               ])
+            } else if (res.result == 0) {
+              this.model = res.model || null
+              this.list = []
             }
           })
       } else {
