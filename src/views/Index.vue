@@ -66,6 +66,7 @@ export default{
         width: 100%;
         max-width: 1440px;
         min-height: 100vh;
+        margin: 0 auto;
       }
       .container-bg .earth-wrap {
         position: absolute;
